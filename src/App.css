@@ -2,6 +2,11 @@
   margin: 30px 0;
 }
 
-.App p {
+.App h1 {
+  text-align: center;
+}
+
+.App-footer {
+  margin: 50px 0;
   text-align: center;
 }
