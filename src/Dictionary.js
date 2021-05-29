@@ -58,6 +58,7 @@ export default function Dictionary() {
           </svg>
         </header>
       </div>
+
       <Results results={results} />
     </div>
   );

@@ -5,16 +5,16 @@
   padding-top: 3rem;
 }
 
-#search-form {
+.Dictionary #search-form {
   border: transparent;
   margin-bottom: 0;
   margin-top: 0;
   background-color: #7599f5;
-  font-size: 1rem;
+  font-size: 1.7rem;
   caret-color: #fff;
 }
 
-#search_icon {
+.Dictionary #search_icon {
   background-color: transparent;
   color: #fff;
   font-size: 1.5rem;
@@ -24,20 +24,22 @@
   border: none;
 }
 
-hr {
-  background: #000000;
-  height: 2rem;
+.Dictionary hr {
+  background: #fff;
+  height: 0.1rem;
   border: none;
   max-width: 55%;
-  margin: 0.5rem auto;
+  margin: 0.2rem auto;
 }
 
 .Dictionary .hint {
   font-size: 0.7rem;
   text-align: center;
+  margin-top: 0.7rem;
+  opacity: 0.7;
 }
 
-.icon {
+.Dictionary .icon {
   color: #000000;
 }
 
