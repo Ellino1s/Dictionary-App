@@ -1,6 +1,12 @@
-.App-header {
+body {
   margin: 0;
-  background-color: #7599f5;
+  padding: 0;
+  faont-family: "Montserrat", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #7599f5;
 }
 
 .App-header svg {
@@ -8,10 +14,12 @@
 }
 
 .App h1 {
+  font-family: "Syncopate", sans-serif;
   text-align: center;
-  font-size: 5rem;
-  font-weight: 800;
+  font-size: 4rem;
+  font-weight: 400;
   padding-top: 5rem;
+  color: #fff;
 }
 
 .App-footer {
