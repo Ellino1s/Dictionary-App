@@ -1,15 +1,10 @@
-img {
-  visibility: hidden;
-}
-
 .phoneticButton {
-  background-image: url(/src/images/audioIcon.svg);
-  background-color: #7599f5;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 2.8rem;
-  height: 2.8rem;
-  background-size: 60%;
+  background-color: #2a52be;
+  color: #fff;
+  padding: 0 0.5rem 0 0.5rem;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.5rem;
   border-radius: 10rem;
   margin-top: 0.5rem;
   transition: all 150ms ease-in-out;

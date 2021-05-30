@@ -1,5 +1,4 @@
 import React from "react";
-import audioIcon from "./images/audioIcon.svg";
 import "./Phonetic.css";
 
 export default function Phonetic(props) {
@@ -11,7 +10,7 @@ export default function Phonetic(props) {
   return (
     <div className="Phonetic">
       <button className="btn phoneticButton" onClick={start}>
-        <img src={audioIcon} alt="megaphone" />
+        <i class="fas fa-volume-up"></i>
       </button>
       <span className="phonetic-text">{props.phonetic.text}</span>
     </div>
