@@ -1,14 +1,20 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Results from "./Results";
+import Photos from "./Photos";
 import "./Dictionary.css";
 
 export default function Dictionary() {
   let [keyword, setKeyword] = useState("");
   let [results, setResults] = useState(null);
+  let [photos, setPhotos] = useState(null);
 
-  function handleResponse(response) {
+  function handleDictionaryResponse(response) {
     setResults(response.data[0]);
+  }
+
+  function handlePexelsResponse(response) {
+    setPhotos(response.data.photos);
   }
 
   function search(event) {
@@ -18,7 +24,17 @@ export default function Dictionary() {
 
     let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${keyword}`;
 
-    axios.get(apiUrl).then(handleResponse);
+    let pexelsApiKey =
+      "563492ad6f917000010000014c48bc44e56143de81f0ac586a765a48";
+    let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=1`;
+    let headers = { Authorization: `Bearer ${pexelsApiKey}` };
+
+    axios.get(apiUrl).then(handleDictionaryResponse);
+    axios
+      .get(pexelsApiUrl, {
+        headers: headers,
+      })
+      .then(handlePexelsResponse);
   }
 
   function handleKeywordChange(event) {
@@ -52,7 +68,7 @@ export default function Dictionary() {
           <svg viewBox="0 0 1440 319">
             <path
               fill="#fff"
-              fill-opacity="1"
+              fillOpacity="1"
               d="M0,32L48,80C96,128,192,224,288,224C384,224,480,128,576,90.7C672,53,768,75,864,96C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
             ></path>
           </svg>
@@ -60,6 +76,7 @@ export default function Dictionary() {
       </div>
 
       <Results results={results} />
+      <Photos photos={photos} />
     </div>
   );
 }
